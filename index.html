@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+  <button class="control" id="playButton"> Play </button>
+  <button class="control" id="pauseButton"> Pause </button>
+  <button class="control stop"> Stop </button>
+
+  <script>
+    const playButton = document.getElementById('playButton');
+    const pauseButton = document.getElementById('pauseButton');
+
+    pauseButton.addEventListener('click', function() {
+      if (pauseButton.classList.contains('blinking')) {
+        // If blinking, stop blinking and remove orange color
+        pauseButton.classList.remove('blinking');
+        pauseButton.classList.remove('pause');
+      } else {
+        // If not blinking, add orange color and start blinking
+        pauseButton.classList.add('pause');
+        pauseButton.classList.add('blinking');
+      }
+    });
+
+    playButton.addEventListener('click', function() {
+      // When Play is pressed, stop blinking and remove orange color from Pause button
+      pauseButton.classList.remove('blinking');
+      pauseButton.classList.remove('pause');
+    });
+  </script>
+ </body>
+</html>
