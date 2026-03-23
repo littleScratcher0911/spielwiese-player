@@ -1,0 +1,22 @@
+.control {
+ border-radius: 10px;
+ padding: 5px;
+}
+
+.pause {
+ background-color: orange;
+}
+
+.stop {
+ background-color: salmon;
+}
+
+@keyframes blink {
+  0% { background-color: orange; }
+  50% { background-color: initial; } /* Reverts to the default background, matching the "control" state */
+  100% { background-color: orange; }
+}
+
+.blinking {
+  animation: blink 1s infinite alternate;
+}
